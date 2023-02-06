@@ -1,5 +1,6 @@
 import art 
 import game_data
+import os
 print(art.logo)
 info=game_data.data
 import random 
@@ -29,6 +30,7 @@ while not lost:
   n1=c1['name']
   n2=c2['name']
   guess=input((f"does {n1} have higher or lower followers than {n2}?: "))
+  os.system('cls')
   if guess==val:
     score+=1
     print(f"score:{score}")
