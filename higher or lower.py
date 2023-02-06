@@ -9,6 +9,11 @@ def picker(info):
   l2=random.choice(info)
   info.remove(l2)
   return l1,l2
+def positions(info,l2):
+  nl1=l2
+  nl2=random.choice(info)
+  info.remove(nl2)
+  return nl1,nl2
 def compare(c1,c2):
   if c1['follower_count']>c2['follower_count']:
     return 'higher'
@@ -17,9 +22,9 @@ def compare(c1,c2):
   else:
     return 'same'
 lost=False
-score=0
+score=0  
+c1,c2=picker(info)
 while not lost:
-  c1,c2=picker(info)
   val=compare(c1,c2)
   n1=c1['name']
   n2=c2['name']
@@ -33,3 +38,5 @@ while not lost:
   else:
     lost=True
     print(f'game over! you scored:{score}')
+  c1,c2=positions(info,c2)
+  
