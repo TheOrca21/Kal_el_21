@@ -31,6 +31,7 @@ while not lost:
   n2=c2['name']
   guess=input((f"does {n1} have higher or lower followers than {n2}?: "))
   os.system('cls')
+  print(logo.art)
   if guess==val:
     score+=1
     print(f"score:{score}")
